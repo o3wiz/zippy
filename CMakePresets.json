@@ -25,7 +25,7 @@
       "cacheVariables": {
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CMAKE_CXX_COMPILER": "clang++-22",
-        "CMAKE_CXX_FLAGS": "-stdlib=libc++"
+        "CMAKE_CXX_FLAGS": "-stdlib=libc++ -fexperimental-library"
       }
     }
   ],

@@ -1,0 +1,28 @@
+[
+  {
+    "label": "Configure",
+    "command": "cmake --preset clang",
+    "tags": [
+      "configure",
+      "clang",
+    ],
+  },
+  {
+    "label": "Debug build",
+    "command": "cmake --build --preset clang-dbg",
+    "tags": [
+      "build",
+      "debug",
+      "clang",
+    ],
+  },
+  {
+    "label": "Debug run",
+    "command": "./build/Debug/main",
+    "show_command": false,
+    "tags": [
+      "run",
+      "debug",
+    ]
+  }
+]

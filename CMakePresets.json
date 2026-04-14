@@ -1,0 +1,66 @@
+{
+  "version": 9,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 30
+  },
+  "configurePresets": [
+    {
+      "name": "__base",
+      "binaryDir": "build",
+      "cacheVariables": {
+        "CMAKE_CONFIGURATION_TYPES": "Debug;Release"
+      },
+      "hidden": true
+    },
+    {
+      "inherits": ["__base"],
+      "name": "vs",
+      "generator": "Visual Studio 18 2026"
+    },
+    {
+      "inherits": ["__base"],
+      "name": "clang",
+      "generator": "Ninja Multi-Config",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "CMAKE_CXX_COMPILER": "clang++-22",
+        "CMAKE_CXX_FLAGS": "-stdlib=libc++"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "__vs_base",
+      "configurePreset": "vs",
+      "jobs": 22,
+      "hidden": true
+    },
+    {
+      "name": "vs-rel",
+      "inherits": ["__vs_base"],
+      "configuration": "Release"
+    },
+    {
+      "name": "vs-dbg",
+      "inherits": ["__vs_base"],
+      "configuration": "Debug"
+    },
+    {
+      "name": "__clang_base",
+      "configurePreset": "clang",
+      "jobs": 22,
+      "hidden": true
+    },
+    {
+      "name": "clang-rel",
+      "inherits": ["__clang_base"],
+      "configuration": "Release"
+    },
+    {
+      "name": "clang-dbg",
+      "inherits": ["__clang_base"],
+      "configuration": "Debug"
+    }
+  ]
+}

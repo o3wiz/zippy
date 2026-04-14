@@ -1,0 +1,10 @@
+---
+Language: Cpp
+BasedOnStyle: Microsoft
+InsertBraces: true
+BreakBeforeBraces: Attach
+BreakBinaryOperations: OnePerLine
+BreakBeforeBinaryOperators: NonAssignment
+AlignOperands: AlignAfterOperator
+InsertNewlineAtEOF: true
+BreakTemplateDeclarations: Yes
